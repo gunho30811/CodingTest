@@ -35,3 +35,28 @@ console.log(a%b);
 const input= require('fs').readFileSync('/dev/stdin').toString().trim();
 console.log(`${input}??!`);
 //trim() 를 와 백틱에 대해 알아보기.
+
+7.1998년생인 내가 태국에서는 2541년생??!
+const fs= require('fs');
+const input= fs.readFileSync("/dev/stdin").toString();
+console.log(+input - 543);
+
+8.킹, 퀸, 룩, 비숍, 나이트, 폰
+let a = require('fs').readFileSync('/dev/stdin').toString().split(' ')
+let b = [1,1,2,2,2,8]
+let c = a.map((x,i)=>b[i] - x)
+console.log(c.join(' '))
+//map 과 join 알아보기.
+
+9.나머지
+const fs = require("fs");
+let [a, b, c] = fs.readFileSync("/dev/stdin").toString().split(" ");
+a = +a;
+b = +b;
+c = +c
+console.log(`${(a+b)%c}
+${((a%c)+(b%c))%c}
+${(a*b)%c}
+${(a%c)*(b%c)%c}
+`)
+
