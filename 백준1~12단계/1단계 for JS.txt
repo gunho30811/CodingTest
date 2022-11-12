@@ -59,4 +59,25 @@ ${((a%c)+(b%c))%c}
 ${(a*b)%c}
 ${(a%c)*(b%c)%c}
 `)
+10.곱셈
+const fs=require('fs');
+const [a,b]=fs.readFileSync("/dev/stdin").toString().split("\n");
+b.split('').reverse().forEach((e)=> console.log(+a * +e));
+console.log(a*b);
+다른 버젼
+const fs = require('fs')
+const input =fs.readFileSync("/dev/stdin").toString().split('\n').map(e=> +e);
+const [inputA, inputB] =input;
+console.log(inputA * (inputB % 10));
+console.log(inputA * parseInt((inputB % 100)/10));
+console.log(inputA * parseInt(inputB / 100));
+console.log(inputA * inputB);
+
+11.새싹
+console.log(`         ,r'"7
+r\`-_   ,'  ,/
+ \\. ". L_r'
+   \`~\\/
+      |
+      |`);
 
