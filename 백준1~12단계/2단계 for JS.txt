@@ -12,4 +12,23 @@ else {console.log("==");}
 let[A,B]=require('fs').readFileSync("/dev/stdin").toString().split(" ");
 A=+A;
 B=+B;
-(A>B?console.log(">"):(A<B ? console.log("<") : console.log("=="))); 
+(A>B?console.log(">"):(A<B ? console.log("<") : console.log("==")));
+
+2.시험 성적
+const fs=require('fs');
+let input=fs.readFileSync('/dev/stdin').toString();
+input=+input;
+console.log(input>=90?"A":(input>=80? "B" :(input>=70? "C":(input>=60? "D":"F"))));
+
+const fs=require('fs');
+let input=fs.readFileSync('/dev/stdin').toString();
+input=+input;
+if(input>=90&&input<=100){
+    console.log("A");
+}else if(input>=80&&input<=89){
+    console.log("B");
+}else if(input>=70&&input<=79){
+    console.log("C");
+}else if(input>=60&&input<=69){
+    console.log("D");
+}else console.log("F");
