@@ -13,3 +13,13 @@ map((e)=>()이게 아니라.
 3.1부터 n 까지의 합.
 const input=+(require('fs').readFileSync('dev/stdin').toString());
 console.log((input*(input+1))/2);
+
+4번 영수증
+const input =require('fs').readFileSync('dev/stdin').toString().split('\n');
+const don =+input[0];
+let su =+input[1];
+let result=0;
+for(var i=0;i<su;i++){
+    result+=+input[i+2].split(' ')[0]* +input[i+2].split(' ')[1];
+}
+console.log(result === don ? "Yes" : "No");
