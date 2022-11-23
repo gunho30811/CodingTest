@@ -1,20 +1,21 @@
-1.구구단
+1.구구단 2739번
 let input =require('fs').readFileSync('dev/stdin').toString();
 input=+input;
 for(let i=1;i<10;i++){
     console.log(`${input} * ${i} = ${input*i}`);
 }
 
-2.A+B를 여러 번 출력하는 문제
+2.A+B -3 10950번
 const input=require('fs').readFileSync('/dev/stdin').toString().split('\n').slice(1);
 input.map(e =>console.log(e.split(' ').reduce((a,b)=>+a+ +b)));
 //+로 강제 정수형변환시 연산자랑 붙이지말자. 그리고 map(e=>())임을 기억하자
 map((e)=>()이게 아니라.
-3.1부터 n 까지의 합.
+
+3.1부터 n 까지의 합. 8393번
 const input=+(require('fs').readFileSync('dev/stdin').toString());
 console.log((input*(input+1))/2);
 
-4번 영수증
+4번 영수증 25304번
 const input =require('fs').readFileSync('dev/stdin').toString().split('\n');
 const don =+input[0];
 let su =+input[1];
@@ -24,7 +25,7 @@ for(var i=0;i<su;i++){
 }
 console.log(result === don ? "Yes" : "No");
 
-6번 A+B-7
+6번 A+B-7 11021번
 const input= require('fs').readFileSync('dev/stdin').toString().split('\n');
 let CaseNum=+input[0];
 for(var i=0; i<CaseNum;i++){
@@ -32,7 +33,7 @@ for(var i=0; i<CaseNum;i++){
     console.log("Case #"+(i+1)+": "+result);
 }
 
-7번 A+B-8
+7번 A+B-8 11022번
 const input=require('fs').readFileSync('dev/stdin').toString().split('\n');
 const CaseNum=+input[0];
 let First=0;
@@ -44,7 +45,7 @@ for(i=1;i<=CaseNum;i++){
     console.log("Case #"+i+": "+First+" + "+Second+" = "+result);
 }
 
-8번 별 찍기 - 1
+8번 별 찍기 - 1 2438번
 const num=+require('fs').readFileSync('dev/stdin').toString();
 let star="";
 for(i=0;i<num;i++){
@@ -52,3 +53,50 @@ for(i=0;i<num;i++){
     console.log(star);
 }
 
+9번 별 찍기 -2 2439번
+const input=+require('fs').readFileSync('dev/stdin').toString();
+for(var i=0;i<input;i++){
+    let star ='';
+    for(let k=input-1; k>=0;k--){
+    star+= k<= i?'*':' ';
+    }
+    console.log(star);
+}
+
+////밑에는 숏 코딩.
+
+let input = require('fs').readFileSync('/dev/stdin').toString();
+
+for (let i = 1; i <= input; i++) {
+  console.log(' '.repeat(input-i) + '*'.repeat(i));
+}
+//같은 데 변수만 바꾼것
+const input=require('fs').readFileSync('dev/stdin').toString();
+let star='*';
+let blank=' ';
+for(let i=1;i<=input;i++){
+    console.log(blank.repeat(input-i)+star.repeat(i));
+}
+
+10번 A+B-5 10952번
+const input=require('fs').readFileSync('dev/stdin').toString().trim().split('\n');
+for(let i=0;i<input.length-1;i++){
+let result=+input[i].split(' ')[1]+ +input[i].split(' ')[0];
+console.log(result);
+}
+11번 더하기 사이클 
+let input =+(require('fs').readFileSync('dev/stdin').toString());
+let num=input;
+let dlf;
+let tlq;
+let cnn=0;
+while(true){
+++cnn;
+    dlf=+num%10;
+    tlq=+Math.floor(num/10);
+    num=+(dlf*10)+ +((dlf+tlq)%10);
+    if(input==num){
+        break;
+    }
+}
+console.log(cnn);
