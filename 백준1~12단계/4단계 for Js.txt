@@ -1,0 +1,10 @@
+1.10807번 개수 세기
+let input =require('fs').readFileSync('dev/stdin').toString().split('\n');
+let num =input[1].split(' ');
+let cnn =0;
+for(let i=0;i<num.length;i++){
+    if (+input[2]==+num[i]){
+        cnn++
+    }
+}
+console.log(cnn);
