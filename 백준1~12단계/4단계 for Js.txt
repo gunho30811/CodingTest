@@ -11,5 +11,18 @@ console.log(cnn);
 
 숏코딩
 const fs = require('fs')
-const [N, A, v] = fs.readFileSync('/dev/stdin').toString().trim().split('\n')
+const [N, A, v] = fs.readFileSync('/dev/stdin').toString().split('\n')
 console.log(A.split(' ').filter(e => e == v).length)
+
+2.10871번 
+const input=require('fs').readFileSync('dev/stdin').toString().split('\n');
+const[NX,A]=input;
+const X=+(NX.split(' ')[1]);
+console.log(A.split(' ').filter(e => +(e)<X).join(' '));
+
+3.10818번
+const input = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+const count = input[0];
+const nums =input[1].split(' ').map(Number);
+nums.sort((a, b) => a - b);
+console.log(nums[0], nums[count-1]);
