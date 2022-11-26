@@ -26,3 +26,13 @@ const count = input[0];
 const nums =input[1].split(' ').map(Number);
 nums.sort((a, b) => a - b);
 console.log(nums[0], nums[count-1]);
+
+4.2562번
+const fs = require('fs');
+const input = fs.readFileSync('/dev/stdin').toString().split('\n').map(Number);
+
+const maxNum = Math.max(...input);
+const indexNum = input.indexOf(maxNum);
+
+console.log(maxNum);
+console.log(indexNum + 1);
