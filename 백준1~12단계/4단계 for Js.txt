@@ -36,3 +36,111 @@ const indexNum = input.indexOf(maxNum);
 
 console.log(maxNum);
 console.log(indexNum + 1);
+
+5.5597번
+let input=require('fs').readFileSync("dev/stdin").toString().split('\n');
+input=input.map(Number);
+let map = new Map();
+  for (let i = 0; i < input.length; i++) {
+    map.set(input[i], 1); //map에 input배열이 삽입 되어진다.
+  }
+
+  for (let i = 1; i <= 30; i++) {
+    if (!map.has(i)) { //map에 배열 중 (i)값이 없으면 console.log(i)를 출력
+      console.log(i);
+    }
+  }
+//map.has('뭐든') map안에 뭐든이라는 string이 있으면 true를 반환 아니면 false
+숏코딩
+const arr = require('fs').readFileSync('/dev/stdin').toString().split('\n').map(e => +e).sort();
+const answer = [];
+for(let i = 1; i <= 30; i++) {
+    if (!arr.includes(i)) answer.push(i);
+}
+console.log(answer.join('\n'))
+//includes 랑 set랑 비슷한데 차이를 못 찾겠다. 다만, set은 map에서 includes는
+배열에서 사용이 되는 것 같다.
+
+6.3052번
+let input=require('fs').readFileSync("dev/stdin").toString().trim().split("\n").map(Number);
+let Remainder=[];
+for(var i=0; i<input.length;i++){
+   Remainder.push(input[i]%42);
+}
+let arr=Remainder.filter((e,idx)=>{
+    return Remainder.indexOf(e)===idx;
+});
+console.log(Number(arr.length));
+//
+다른풀이
+let input=require('fs').readFileSync("dev/stdin").toString().trim().split("\n").map(Number);
+let Remainder=[];
+let a;
+for(var i=0; i<input.length;i++){
+   Remainder.push(input[i]%42);
+}
+let result=[... new Set(Remainder)];
+console.log(result.length);
+
+7.1546번
+const input=require('fs').readFileSync("dev/stdin").toString().split('\n');
+const result=input[1].split(" ");
+const N=Number(input[0]);
+const max=Math.max(...result);
+let sum=0;
+for(var i=0;i<N;i++){
+    result[i]=(result[i]*100/max);
+    sum+=result[i];
+}
+console.log(sum/N);
+
+최대 다른 형태로
+const input=require('fs').readFileSync("dev/stdin").toString().split('\n');
+const result=input[1].split(" ").map(Number);
+result.sort((a,b) => b-a);
+const max=result[0];
+let sum=0;
+for(var i=0;i<input[0];i++){
+    result[i]=parseFloat(result[i]*100/max);
+    sum+=result[i];
+}
+console.log(parseFloat(sum/input[0]));
+
+8.8956번
+const input=require('fs').readFileSync("dev/stdin").toString().split("\n");
+const Len=+input[0];
+for(var j=0;j<Len;j++){
+    let R=0;
+    let N=0;
+    let a=input[j+1].split('');
+    for(var i=0;i<a.length;i++){
+    if (a[i]=='O'){
+        N=1+N;
+        R+=N;
+        if(a[i+1]=='X'){
+            N=0;
+            }
+        }
+    }
+  console.log(R);
+}
+
+9.4344번
+const input = require("fs").readFileSync("dev/stdin").toString().split("\n");
+const C = parseInt(input[0]);
+for (let i = 1 ; i <= C ; i++) {
+    let sum = 0;
+    let cases = 0;
+    let numArray = input[i].split(" ").map(Number);
+    const N = numArray[0];
+    for (let j = 1 ; j <= N ; j++) {
+        sum += numArray[j];
+    }
+    const avg = sum / N;
+    for (let k = 1 ; k <= N ; k++) {
+        if (numArray[k] > avg) {
+            cases += 1;
+        }
+    }
+    console.log(((cases / N) * 100).toFixed(3) + "%")
+}
