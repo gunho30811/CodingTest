@@ -1,0 +1,20 @@
+개미 군단
+--
+function solution(hp) {
+
+    let cnt=0;
+    if(hp>=5){
+        cnt+=Math.floor(hp/5);
+        hp-=Math.floor(hp/5)*5;
+    }
+        if(hp>=3){
+        cnt+=Math.floor(hp/3);
+        hp-=Math.floor(hp/3)*3;
+    }
+        if(hp>=1){
+        cnt+=Math.floor(hp/1);
+        hp-=Math.floor(hp/1)*1;
+    }
+    return cnt;
+}
+--
