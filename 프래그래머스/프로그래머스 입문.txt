@@ -1,5 +1,4 @@
 개미 군단
---
 function solution(hp) {
 
     let cnt=0;
@@ -18,3 +17,39 @@ function solution(hp) {
     return cnt;
 }
 --
+가위바위보
+풀이 1번
+function solution(rsp) {
+    let add='';
+    for(let i=0;i<rsp.length;i++){
+        const Item=rsp[i];
+        if(Item==='2'){
+            add+='0';
+        }
+        else if(Item==='0'){
+            add+='5';
+        }
+        else if(Item==='5'){
+            add+='2';
+        }
+    }
+    return add;
+}
+//rsp는 0<rsp<100 길이인 문자열이다. 문자열을 잘라야 사용할 수 있을 줄 알았는데,
+//그것이 아니라 그냥 잘라서 사용이 가능했다. 그 부분을 확인한 것이 rsp[i]를 item에 넣은 것.
+풀이 2번
+const win={
+    "2": "0",
+    "0": "5",
+    "5": "2"
+}
+function solution(rsp) {
+    let answer='';
+    for(let i=0; i<rsp.length;i++){
+        answer+=win[rsp[i]];
+    }
+    return answer;
+}
+//객체를 이용한 풀이로
+//{ 키: 벨류} 로 저장되어 있는 win 객체가 있다.
+//이때, rsp[i]는"2","0","5" 중에 하나이고 만약 "2"라면 win["2"] 이 되고 이것은 키 밸류에 의해 "0"이 출력된다.
