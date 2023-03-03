@@ -86,5 +86,16 @@ function solution(order) {
 //== 은 값만 ===은 타입까지 비교한다. 3=='3' ok , 3==='3' no
 //문자열은 문자열 자체로 배열을 가진다.
 
+암호해독
+function solution(cipher, code) {
+    var answer = '';
+    let item =[];
+        for(var i=code-1; i<cipher.length;i+=code){
+            item.push(cipher[i]);
+    }
+    return item.join('');
+}
+//for 문 안에 item 쓰는 것과 배열로 push해서 하는 차이를 명확하게 구분해야겠다.
+
 
 
