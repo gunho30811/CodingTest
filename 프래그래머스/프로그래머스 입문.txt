@@ -69,3 +69,22 @@ function solution(array, n) {
     return answer;
 }
 //최소값이면 가장 가까운 수를 return.
+
+369 게임
+function solution(order) {
+    let cnt=0;
+    const Strorder=String(order);
+    for(var i=0;i<Strorder.length;i++){
+        const item=Strorder[i];
+        if(item=='3'||item=='6'||item=='9'){
+            cnt++;
+        }
+    }
+    return cnt;
+}
+
+//== 은 값만 ===은 타입까지 비교한다. 3=='3' ok , 3==='3' no
+//문자열은 문자열 자체로 배열을 가진다.
+
+
+
