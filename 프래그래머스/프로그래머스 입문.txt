@@ -97,5 +97,21 @@ function solution(cipher, code) {
 }
 //for 문 안에 item 쓰는 것과 배열로 push해서 하는 차이를 명확하게 구분해야겠다.
 
+대소문자와 소문자
+function solution(my_string) {
+    let answer=[];
+    for(var i=0;i<my_string.length;i++){
+        let item=my_string[i];
+        if(item.toUpperCase()===item){
+            item=item.toLowerCase();
+        }
+        else{
+            item=item.toUpperCase();
+        }
+        answer.push(item);
+    }
+    return answer.join('');
+}
+//toUpperCase() 와 toLoserCase() 는 대문자로 소문자로 바꾸어준다. 
 
 
