@@ -54,5 +54,18 @@ function solution(rsp) {
 //{ 키: 벨류} 로 저장되어 있는 win 객체가 있다.
 //이때, rsp[i]는"2","0","5" 중에 하나이고 만약 "2"라면 win["2"] 이 되고 이것은 키 밸류에 의해 "0"이 출력된다.
 
-
-
+가까운수
+function solution(array, n) {
+    let min=100;
+    let answer=0;
+    array=array.sort((a,b)=>a-b);
+    for(var i=0;i<array.length;i++){
+        const item=array[i];
+        if(min>Math.abs(n-item)){
+            min=Math.abs(n-item);
+            answer=item;
+        }
+    }
+    return answer;
+}
+//최소값이면 가장 가까운 수를 return.
