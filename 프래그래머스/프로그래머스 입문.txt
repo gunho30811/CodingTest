@@ -114,4 +114,13 @@ function solution(my_string) {
 }
 //toUpperCase() 와 toLoserCase() 는 대문자로 소문자로 바꾸어준다. 
 
+영어가 싫어요.
+function solution(numbers) {
+    const num=["zero","one","two","three","four","five","six","seven","eight","nine"];
+    for(var i=0; i<num.length;i++){
+        numbers=numbers.split(num[i]).join(i);
+    }
+    return Number(numbers);
+}
+//배열과 문자열 값과 for문의 i값이 일치한다. split은 ()안에 모든내용을 자른다.join은 나눠진 배열을 합친다.
 
