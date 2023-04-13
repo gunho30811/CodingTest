@@ -158,4 +158,15 @@ function solution(s) {
 }
 //해설은 블로그에 올려둠
 
+n의 배수 고르기 
+function solution(n, numlist) {
+    var answer = [];
+    for(var i=0;i<numlist.length;i++){
+        if(numlist[i]%n==0){
+            answer.push(numlist[i])
+        }
+    }
+    return answer;
+}
+//
 
